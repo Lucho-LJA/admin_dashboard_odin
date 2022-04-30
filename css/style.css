@@ -86,3 +86,35 @@ button{
     color: var(--color-principal);
     font-weight: bolder;
 }
+.board{
+    display: inline-grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 1rem 1.5rem 2rem 1rem;
+}
+.projects{
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    gap: 0.5rem;
+    padding-right: 1rem;
+}
+.projects-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    grid-row: repeat(auto-fit,minmax(200px,1fr));
+    gap: 1rem;
+}
+.project{
+    background-color: blue;
+}
+.announcements{
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+.tendings{
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
