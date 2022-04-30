@@ -2,6 +2,7 @@
     --color-grey:rgba(228, 226, 226, 0.808);
     --color-menu:#3498DB;
     --color-principal: white;
+    --radius: 0.5rem;
 }
 .html{
     font-size: 10px;
@@ -90,7 +91,8 @@ button{
     display: inline-grid;
     grid-template-columns: 3fr 1fr;
     grid-template-rows: 1fr 1fr;
-    padding: 1rem 1.5rem 2rem 1rem;
+    padding: 0 0 2rem 1rem;
+    gap: 1rem;
 }
 .projects{
     grid-column: 1 / 2;
@@ -108,13 +110,68 @@ button{
     gap: 1rem;
 }
 .project{
-    background-color: blue;
+    background-color: var(--color-principal);
 }
+
 .announcements{
     grid-column: 2 / 3;
     grid-row: 1 / 2;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 1rem;
 }
-.tendings{
+.announcements .title-announcements > p{
+    font-size: 1.25rem;
+    font-weight: bolder;
+    margin: 0;
+    padding: 0;
+}
+.announcements-container{
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    background-color: blue;
+    padding: 0;
+    
+}
+.announcements-container > div:not(:last-child){
+    border-bottom: solid 1px #000;
+}
+
+.announcements-container > div:first-child{
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+}
+.announcements-container > div:last-child{
+    border-bottom-left-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+}
+.announcement{
+    background-color: var(--color-principal);
+    padding: 0.25rem;
+    margin: 0;
+}
+.announcement > p{
+    margin: 0;
+    padding: 0;
+}
+.announcement > p:first-child{
+    font-weight: bolder;
+}
+.trendings{
     grid-column: 2 / 3;
     grid-row: 2 / 3;
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+}
+.trending{
+    background-color: var(--color-principal);
 }
