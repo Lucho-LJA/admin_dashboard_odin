@@ -19,9 +19,11 @@
     --font-large: 1.25;
     --font-larger: 2rem;
     --height-header: 9rem;
-    --height-board: calc(100vh - var(--height-header)) ;
-    --height-project: 150px;
-    --width-project: 300px;
+    --height-board: calc(100vh - var(--height-header) - 3px) ;
+    --height-project: 180px;
+    --width-project: 250px;
+    --size-x-shadow-project: 10px;
+    --shadow-project: -10px 0px orange;
 }
 .html{
     font-size: 10px;
@@ -38,7 +40,7 @@ body > * > * > * > * > * > * > * > *{
 
 .container{
     display: inline-grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 190px auto;
 }
 .menu{
     background-color: var(--color-menu);
@@ -51,14 +53,14 @@ body > * > * > * > * > * > * > * > *{
     flex-direction: column;
     gap: var(--gap-larger);
     justify-items: flex-start;
-    padding: var(--padding-outer);
+    padding: var(--padding-short);
     color: var(--color-principal);
 }
 .menu .container-logo{
     display: flex;
-    font-size: var(--font-larger);
+    font-size: 1.5rem;
     gap: var(--gap-normal);
-    justify-content: center;
+    justify-content:flex-start;
     align-items: center;
     font-weight: bolder;
 }
@@ -73,14 +75,17 @@ body > * > * > * > * > * > * > * > *{
 .container-content{
     display: flex;
     flex-direction: column;
-    
 }
 .header{
     background-color: var(--color-principal);
     display: grid;
     grid-template-columns: auto auto;
-    padding: 0 var(--padding-outer);
+    padding-left: var(--padding-outer);
+    padding-right: var(--padding-outer);
     height: var(--height-header);
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+    border-bottom-color: rgb(161, 159, 159,0.5);
 }
 .search{
     display: flex;
@@ -170,6 +175,7 @@ button{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(var(--width-project),1fr));
     gap: var(--gap-normal);
+    padding-left: var(--size-x-shadow-project);
 }
 .project{
     background-color: var(--color-principal);
@@ -177,7 +183,10 @@ button{
     flex-direction: column;
     height: var(--height-project);
     justify-content: space-between;
-    padding: var(--padding-outer);
+    padding: var(--padding-short);
+    box-shadow: var(--shadow-project);
+    border-top-right-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
 }
 .project div:first-child{
     padding-bottom: var(--padding-outer);
@@ -188,7 +197,7 @@ button{
     padding-bottom: var(--padding-short);
 }
 .project div p:last-child{
-    height: 80px;
+    height: 100px;
     overflow-y: auto;
 }
 .project div:last-child{
