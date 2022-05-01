@@ -5,14 +5,18 @@
     --radius: 0.5rem;
     --betwen-title-container: 0.5rem;
     --title-container: 1.25rem;
-    --betwen-container: 0.25rem;
-    --img-perfil-short: 1.5rem;
+    --img-perfil-short: 2rem;
     --img-perfil-medium: 3rem;
     --img-perfil-large: 3.5rem; 
+    --padding-short: 0.5rem;
     --padding-outer: 1rem;
     --gap-min: 2px;
+    --gap-short: 0.5rem;
     --gap-normal: 1rem;
     --padding-min: 0.5rem;
+    --font-min: 0.7rem;
+    --height-header: 9rem;
+    --height-board: calc(100vh - var(--height-header)) ;
 }
 .html{
     font-size: 10px;
@@ -37,15 +41,14 @@ body > * > * > * > * > * > * > * > *{
 .container-content{
     display: flex;
     flex-direction: column;
-}
-.board{
-    background-color: var(--color-grey);
-    overflow-y: auto;
+    
 }
 .header{
     background-color: var(--color-principal);
     display: grid;
     grid-template-columns: auto auto;
+    padding: 0 var(--padding-outer);
+    height: var(--height-header);
 }
 .search{
     display: flex;
@@ -66,7 +69,7 @@ body > * > * > * > * > * > * > * > *{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 1rem;
+    gap: var(--gap-normal);
     font-size: 1rem;
     font-weight: bolder;
 }
@@ -78,7 +81,10 @@ body > * > * > * > * > * > * > * > *{
     justify-content: flex-start;
     justify-items: center;
     align-items: center;
-    gap: 1rem;
+    gap: var(--gap-normal);
+}
+.perfil-title img{
+    height: var(--img-perfil-medium);
 }
 .btn-options{
     display: flex;
@@ -107,10 +113,13 @@ button{
     font-weight: bolder;
 }
 .board{
+    background-color: var(--color-grey);
+    height: var(--height-board);
     display: inline-grid;
     grid-template-columns: 3fr 1fr;
-    padding: 0 0 2rem 1rem;
-    gap: var(--gap-normal);
+    padding: 0 var(--padding-outer);
+    column-gap: var(--gap-normal);
+    
 }
 .projects{
     grid-column: 1 / 2;
@@ -119,6 +128,7 @@ button{
     flex-direction: column;
     align-content: flex-start;
     gap: 0.5rem;
+    overflow-y: auto;
 }
 .projects-container{
     display: grid;
@@ -133,11 +143,11 @@ button{
 .announcements{
     grid-column: 2 / 3;
     grid-row: 1 / 2;
-    background-color: red;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: var(--betwen-title-container);
+    gap: var(--gap-normal);
+    font-size: var(--font-min);
 }
 .announcements .title-announcements > p, .trendings .title-trending > p{
     font-size: var(--title-container);
@@ -145,50 +155,43 @@ button{
 }
 
 .announcements-container, .trending-container{
-    border-radius: 1rem;
+    border-radius: var(--radius);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     overflow-y: auto;
 }
-.announcements-container > div:not(:last-child){
-    border-bottom: solid 1px #000;
-}
-
-.announcements-container > div:first-child, .trending-container > div:first-child{
-    border-top-left-radius: var(--radius);
-    border-top-right-radius: var(--radius);
-}
-.announcements-container > div:last-child, .trending-container > div:last-child{
-    border-bottom-left-radius: var(--radius);
-    border-bottom-right-radius: var(--radius);
-}
 .announcement{
     background-color: var(--color-principal);
-    padding: var(--padding-min);
+    padding: var(--padding-short);
 }
+.announcements-container > div:not(:last-child){
+    border-bottom: solid 1px #000;
+    
+}
+
 .announcement > p:first-child{
     font-weight: bolder;
 }
 .trendings{
     grid-column: 2 / 3;
     grid-row: 2 / 3;
-    background-color: blue;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: var(--betwen-title-container);
+    gap: var(--gap-short);
+    font-size: var(--font-min);
 }
 
 .trending{
     background-color: var(--color-principal);
     display: flex;
     width: 100%;
-    gap: var(--betwen-container);
+    gap: var(--gap-normal);
 }
-.trending .icon img{
-    height: var(--img-perfil-medium) ;
+.trending img{
+    height: var(--img-perfil-short) ;
 }
 .trending .info-user{
     display: flex;
