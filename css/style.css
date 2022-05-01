@@ -13,8 +13,11 @@
     --gap-min: 2px;
     --gap-short: 0.5rem;
     --gap-normal: 1rem;
+    --gap-larger: 2rem;
     --padding-min: 0.5rem;
     --font-min: 0.7rem;
+    --font-large: 1.25;
+    --font-larger: 2rem;
     --height-header: 9rem;
     --height-board: calc(100vh - var(--height-header)) ;
 }
@@ -37,6 +40,33 @@ body > * > * > * > * > * > * > * > *{
 }
 .menu{
     background-color: var(--color-menu);
+}
+.menu .logo img{
+    height: var(--img-perfil-medium);
+}
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-larger);
+    justify-items: flex-start;
+    padding: var(--padding-outer);
+    color: var(--color-principal);
+}
+.menu .container-logo{
+    display: flex;
+    font-size: var(--font-larger);
+    gap: var(--gap-normal);
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+}
+.menu > div:not(:first-child) > *{
+    display: flex;
+    gap: var(--gap-normal);
+    font-size: var(--font-large);
+    font-weight: bold;
+    justify-content: flex-start;
+    align-items: center;
 }
 .container-content{
     display: flex;
@@ -73,7 +103,7 @@ body > * > * > * > * > * > * > * > *{
     font-size: 1rem;
     font-weight: bolder;
 }
-.perfil-option .img-perfil img{
+.perfil-option .img-perfil img, .perfil-title img{
     height: var(--img-perfil-medium);
 }
 .perfil-title{
@@ -83,12 +113,9 @@ body > * > * > * > * > * > * > * > *{
     align-items: center;
     gap: var(--gap-normal);
 }
-.perfil-title img{
-    height: var(--img-perfil-medium);
-}
 .btn-options{
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
     justify-content: flex-end;
     justify-items: center;
     align-items: center;
@@ -104,8 +131,8 @@ body > * > * > * > * > * > * > * > *{
     font-size: 1.5rem;
 }
 button{
-    height: 2rem;
-    width: 6rem;
+    height: 1.5rem;
+    width: 5rem;
     background-color: var(--color-menu);
     border-radius: 1rem;
     font-size: 1rem;
